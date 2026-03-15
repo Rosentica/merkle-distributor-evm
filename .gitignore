@@ -1,0 +1,41 @@
+# Compiler files
+cache/
+out/
+
+# Ignores development broadcast logs
+!/broadcast
+/broadcast/*/31337/
+/broadcast/**/dry-run/
+
+# Docs
+docs/
+
+# Dotenv files (all environments)
+.env
+.env.*
+*.env
+offchain/.env
+offchain/.env.*
+
+# Frontend env
+frontend/.env.local
+frontend/.env.production
+frontend/.env
+
+# Offchain data files (live state, not source code)
+offchain/holders.json
+offchain/merkle-data.json
+offchain/cumulative-totals.json
+offchain/cumulative-totals-backup.json
+offchain/cumulative-totals-remote.json
+offchain/claimed-state.json
+offchain/archives/
+offchain/node_modules/
+
+# Frontend
+frontend/node_modules/
+frontend/.next/
+
+# Misc
+node_modules/
+*.log

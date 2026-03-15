@@ -1,0 +1,24 @@
+{
+  "name": "dragon-reward-distributor-offchain",
+  "version": "1.0.0",
+  "description": "Off-chain scripts and API server for DragonRewardDistributor contract",
+  "type": "module",
+  "scripts": {
+    "get-holders": "node getHolders.js",
+    "generate-merkle": "node generateMerkle.js",
+    "update-merkle": "node updateMerkleRoot.js",
+    "bot": "node distributionBot.js",
+    "snapshot": "node snapshotScheduler.js",
+    "server": "node server.js",
+    "server:dev": "node --watch server.js",
+    "server:prod": "NODE_ENV=production node server.js",
+    "test:api": "curl http://localhost:3002/api/health"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "ethers": "^6.16.0",
+    "express": "^4.18.2",
+    "merkletreejs": "^0.3.11"
+  }
+}
