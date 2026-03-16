@@ -8,15 +8,27 @@ import {
   getDefaultConfig,
   darkTheme,
 } from "@rainbow-me/rainbowkit";
+import {
+  binanceWallet,
+  metaMaskWallet,
+  walletConnectWallet,
+  injectedWallet,
+} from "@rainbow-me/rainbowkit/wallets";
 import "@rainbow-me/rainbowkit/styles.css";
 
 const config = getDefaultConfig({
   appName: "Dragon Reward Distributor",
-  projectId: "b1e41e2f8cbe3e1c8f3a8e1f2b3c4d5e", // Get from cloud.walletconnect.com
+  projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || "85e4a3d844c5f661744d8d53139200ab",
   chains: [bsc],
   transports: {
     [bsc.id]: http("https://bsc-dataseed.binance.org/"),
   },
+  wallets: [
+    {
+      groupName: "Popular",
+      wallets: [binanceWallet, metaMaskWallet, walletConnectWallet, injectedWallet],
+    },
+  ],
 });
 
 const queryClient = new QueryClient();
